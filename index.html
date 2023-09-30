@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G-Code Modifier</title>
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".nc" />
+    <button onclick="modifyFile()">Modify G-Code</button>
+    <a id="downloadLink" style="display:none">Download Modified File</a>
+
+    <script>
+        function modifyFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a file!');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const lines = e.target.result.split('\n');
+
+                let originalZDepth = null;
+                for (const line of lines) {
+                    const match = line.match(/G01 F200 Z(-\d+\.\d+)/);
+                    if (match) {
+                        originalZDepth = parseFloat(match[1]);
+                        break;
+                    }
+                }
+
+                if (originalZDepth === null) {
+                    alert('Original Z depth not found.');
+                    return;
+                }
+
+                const g01StartIndex = lines.findIndex(line => /G01 F200 X\d+\.\d+ Y\d+\.\d+/.test(line));
+                
+                if (g01StartIndex === -1) {
+                    alert('G01 lines not found.');
+                    return;
+                }
+
+                let modifiedLines = lines.slice(0, g01StartIndex);
+                [originalZDepth / 3, (2 * originalZDepth) / 3, originalZDepth].forEach(z => {
+                    modifiedLines.push(`G01 F200 Z${z.toFixed(3)}`);
+                    modifiedLines = modifiedLines.concat(lines.slice(g01StartIndex));
+                });
+
+                const modifiedContent = modifiedLines.join('\n');
+                const blob = new Blob([modifiedContent], { type: 'text/plain' });
+                const link = document.getElementById('downloadLink');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'modified_' + file.name;
+                link.style.display = 'block';
+            };
+            reader.readAsText(file);
+        }
+    </script>
+</body>
+</html>
