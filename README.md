@@ -7,7 +7,7 @@
 Við hjá [Fab Lab Akureyri](https://www.fla.is/) notum stundum [Caride copper](https://copper.carbide3d.com/) til að gera NC/G-code skrár fyrir rafrásarfræsun. Helsti gallinn við það er að það býður ekki upp á útskurðinn í þrepum, en það minnkar:
 
 - Álag á fræsinn
-- Líkur á að platann losni frá
+- Líkur á að platan losni frá
 - Hávaða
 
 Við Chat-GPT 4 útbjuggum því þessa skriptu sem breytir NC kóðanum fra Carbide3D frá því að fara eina umferð, yfir í að fara þrjár umferðir með 1/3 dýpt í hverri.
