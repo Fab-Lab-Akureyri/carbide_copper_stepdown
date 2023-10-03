@@ -47,3 +47,7 @@ Keyrðu `copper_stepdown.py` með `Python3` / _Run `copper_stepdown.py` with `Py
 Opnaðu `index.html` í vafra / _Open the `index.html` file in your browser_
 
     index.html
+
+## Vefviðmót / Online version
+
+Kíkið [hingað](https://www.fla.is/tol/gcode_modifier/) / Go [here](https://www.fla.is/tol/gcode_modifier/) 
