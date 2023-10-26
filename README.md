@@ -32,12 +32,6 @@ Vinsamlegast notið síðu eins og t.d. [NC Viewer](https://ncviewer.com/) til a
 
 ## Notkun / _Running the script_
 
-### HTML & JavaScript
-
-Opnaðu `index.html` í vafra / _Open the `index.html` file in your browser_
-
-    index.html
-
 ### Vefviðmót / Online version
 
 Kíkið [hingað](https://www.fla.is/tol/gcode_modifier/) / Go [here](https://www.fla.is/tol/gcode_modifier/) 
