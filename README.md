@@ -32,22 +32,12 @@ Vinsamlegast notið síðu eins og t.d. [NC Viewer](https://ncviewer.com/) til a
 
 ## Notkun / _Running the script_
 
-Sæktu þetta / _Clone or download this_ repo
-
-Notaðu þá útgáfu sem þér hentar / _Use whichever version you prefer_
-
-### Python3
-
-Keyrðu `copper_stepdown.py` með `Python3` / _Run `copper_stepdown.py` with `Python3`
-
-    python.exe '.\copper_stepdown.py' 'edge-cuts-file.nc'
-
-## HTML & JavaScript
+### HTML & JavaScript
 
 Opnaðu `index.html` í vafra / _Open the `index.html` file in your browser_
 
     index.html
 
-## Vefviðmót / Online version
+### Vefviðmót / Online version
 
 Kíkið [hingað](https://www.fla.is/tol/gcode_modifier/) / Go [here](https://www.fla.is/tol/gcode_modifier/) 
